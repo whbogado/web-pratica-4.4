@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                template="./WEB-INF/templates/layout.xhtml">
+
+    <ui:define name="styles">
+        <link href="./css/inscricao.css" rel="stylesheet" type="text/css" />
+    </ui:define>
+
+    <ui:define name="metadata">
+    </ui:define>
+
+    <ui:define name="javascript">
+    </ui:define>
+
+    <ui:define name="content">
+        <h:form>
+            <h:panelGroup layout="block" styleClass="">
+                <h:outputText styleClass="titulo-form" value="INSCRIÇÃO CONFIRMADA"/>
+            </h:panelGroup>
+            <h:panelGroup layout="block" styleClass="">
+                <h:outputLabel value="Prezado(a)"/>
+                <h:outputText value="#{inscricaoBean.candidato.nome},"/>
+            </h:panelGroup>
+            <h:panelGroup layout="block" styleClass="">
+                <h:outputText value="Seguem os dados da sua inscrição"/>
+            </h:panelGroup>
+            <h:panelGroup layout="block" styleClass="">
+                <h:outputLabel value="Idioma escolhido: "/>
+                <h:outputText value="#{inscricaoBean.candidato.idioma.descricao}"/>
+            </h:panelGroup>
+            <h:panelGroup layout="block" styleClass="">
+                <h:outputLabel value="CPF: "/>
+                <h:outputText value="#{inscricaoBean.candidato.cpf}"/>
+            </h:panelGroup>
+            <h:panelGroup layout="block" styleClass="">
+                <h:outputLabel value="Data e hora: "/>
+                <h:outputText value="#{inscricaoBean.candidato.dataHora}"/>
+            </h:panelGroup>
+            <h:panelGroup layout="block" styleClass="">
+                <h:outputText styleClass="titulo-form" value="Endereço:"/>
+            </h:panelGroup>
+            <h:panelGroup layout="block" styleClass="">
+                <h:outputText value="#{inscricaoBean.candidato.endereco}"/><br/>
+                <h:outputText value="#{inscricaoBean.candidato.cidade}"/>
+                <h:outputText value="#{inscricaoBean.candidato.estado}"/>
+            </h:panelGroup>
+            <h:panelGroup layout="block" styleClass="">
+                <h:commandButton value="Voltar" action="inscricao"/>
+            </h:panelGroup>
+            <h:messages/>
+        </h:form>
+    </ui:define>
+
+</ui:composition>
